@@ -27,6 +27,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>log4j-over-slf4j</artifactId>
 		</dependency>
@@ -50,6 +54,11 @@
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.11</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.3</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
