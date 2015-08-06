@@ -52,7 +52,7 @@ public class MyRealm2 implements Realm {
 			throws AuthenticationException {
 		
 		String username = (String) token.getPrincipal();
-		String password = new String((char [])token.getCredentials()) ;
+		String password = new String((char [])token.getCredentials());
 		if(!"wang".equals(username)){
 			throw new UnknownAccountException();
 		}
