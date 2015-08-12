@@ -10,14 +10,10 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:c2-repository.xml,
+			classpath:applicationContext.xml,
 			classpath:cache-bean.xml,
 			classpath:shiro.xml,
-			classpath:c2-base-bean.xml,
-			classpath:c2-bgm-bean.xml,
-			classpath:c2-domain-bean.xml,
-			classpath:c2-web-bean.xml,
-			classpath:c2-front-bean.xml
+			classpath:shiro-bean.xml
 		</param-value>
 	</context-param>
 

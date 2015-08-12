@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>业务管理后台</title>
+#parse("bgm/include.vm")
+<link href="$template_url/admin/css/Smalltwo.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	html,body{
+		height:100%;
+	}
+</style>
+<script>
+	$(function(){
+		$("#loginForm").validate({
+			submitHandler:function(form){
+				form.submit();
+            },
+            onfocusout: function(element) { $(element).valid(); },
+			rules:{
+				loginName:{required:true},
+				password:{required:true},
+				checkcode:{required:true}
+    		},
+            messages: {
+            	loginName:{required:"<span style='color:red'>*</span>"},
+    			password:{required:"<span style='color:red'> *</span>"},
+            	checkcode:{required:"<span style='color:red'>*</span>"}
+			}		
+		});
+		$("#checkcodeImg").attr("src","$front_url/checkcode.html?" + Math.random());
+		
+		if("$!error") alert("$!error");
+	});
+</script>
+</head>
+
+<body>
+
+<div class="logoAll">
+    <div class="logo">
+        <div class="logoL"><img src="$template_url/admin/images/login/logo.png"/><img src="$template_url/admin/images/top1.png" class="logoL_img1"></div>
+    </div>
+</div>
+
+
+<div class="main">
+	<div class="main_DL">
+	    <div class="main_DL_L">
+		    <table width="540px" border="0" cellspacing="0" cellpadding="0">
+				<tr><td height="80px" valign="top"><img src="$template_url/admin/images/login/img1.png" width="439" height="35" /></td></tr>
+				<tr><td height="90px" align="right" valign="bottom"><img src="$template_url/admin/images/login/img2.png" width="402" height="35" /></td></tr>
+		    </table>
+	    </div>
+	    
+    	<div class="main_DL_R">
+	        <div class="main_DL_up">
+				<form action="$front_url/login.html" method="post" id="loginForm">
+	            	<table width="325px" border="0" cellspacing="0" cellpadding="0">
+	              		<tr>
+			                <td width="73" height="55px">用户名：</td>
+			                <td colspan="2">
+			                	<input id="loginName" name="loginName" type="text" class="text1" autofocus placeHolder="请输入不少于6位的用户名"/>
+			                </td>
+	              		</tr>
+						<tr>
+							<td height="55px">密&nbsp;&nbsp;码：</td>
+							<td colspan="2">
+								<input id="password" name="password" type="password" class="text1" placeHolder="请输入不少于6位的登录密码"/>
+							</td>
+						</tr>
+						<tr>
+							<td height="55px">验证码：</td>
+							<td width="95"><input id="checkcode" name="checkcode" type="text" maxlength="4" class="text2" placeHolder="不区分大小写"/ style="width:75px"></td>
+							<td width="157"><img  id="checkcodeImg" onclick="this.src='$front_url/checkcode.html?'+ Math.random()" width="129" height="39" /></td>
+						</tr>
+	              		<tr>
+	              			<td height="75px" colspan="3"><input name="" type="image" src="$template_url/admin/images/login/anniu.gif" /></td>
+	              		</tr>
+	            	</table>
+				</form>
+	        </div>
+	        
+			<div class="main_DL_foot">
+	       		<span style="color:#0682c0">温馨提示：</span>
+	       		<br/>
+	      		 密码连续输入错误
+				<span style="color:#ff0101">5</span>
+				次后账户会被锁定，
+				<span style="color:#ff0101">次日</span>
+				将会解锁。
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
