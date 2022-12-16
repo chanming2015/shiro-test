@@ -13,7 +13,7 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.test.skip>true</maven.test.skip>
-		<spring.version>4.3.18.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<hibernate.version>4.3.4.Final</hibernate.version>
 		<spring-data-jpa.version>1.11.23.RELEASE</spring-data-jpa.version>
 		<aspectj.version>1.7.4</aspectj.version>
